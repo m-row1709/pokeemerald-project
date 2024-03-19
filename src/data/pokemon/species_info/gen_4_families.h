@@ -2962,7 +2962,7 @@ const struct SpeciesInfo gSpeciesInfoGen4[] =
         .baseSpDefense = 108,
         .types = MON_TYPES(TYPE_GHOST, TYPE_DARK),
         .catchRate = 100,
-        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 170 : 168,
+        .expYield = 215,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 30,
         .friendship = STANDARD_FRIENDSHIP,
