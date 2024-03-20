@@ -3832,6 +3832,8 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .types = MON_TYPES(TYPE_BUG, TYPE_ROCK),
         .catchRate = 10,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 177 : 80,
+        .itemCommon = ITEM_BERRY_JUICE,
+        .itemRare = ITEM_BERRY_JUICE,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = STANDARD_FRIENDSHIP,
@@ -5066,6 +5068,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .types = MON_TYPES(TYPE_WATER, TYPE_FLYING),
         .catchRate = 45,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 69 : 108,
+        .itemRare = ITEM_MYSTIC_WATER,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 25,
         .friendship = STANDARD_FRIENDSHIP,
@@ -5125,6 +5128,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     #else
         .expYield = 168,
     #endif
+        .itemRare = ITEM_MYSTIC_WATER,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 25,
         .friendship = STANDARD_FRIENDSHIP,
