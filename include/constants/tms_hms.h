@@ -5,26 +5,26 @@
     F(FOCUS_PUNCH) \
     F(DRAGON_CLAW) \
     F(WATER_PULSE) \
-    F(CALM_MIND) \
+    F(MUD_SHOT) \
     F(ROAR) \
     F(TOXIC) \
-    F(HAIL) \
-    F(BULK_UP) \
+    F(RECYCLE) \
+    F(SLUDGE) \
     F(BULLET_SEED) \
     F(HIDDEN_POWER) \
-    F(SUNNY_DAY) \
-    F(TAUNT) \
+    F(DISCHARGE) \
+    F(WEATHER_BALL) \
     F(ICE_BEAM) \
     F(BLIZZARD) \
-    F(HYPER_BEAM) \
+    F(CRUNCH) \
     F(LIGHT_SCREEN) \
-    F(PROTECT) \
-    F(RAIN_DANCE) \
+    F(LEECH_LIFE) \
+    F(LIQUIDATION) \
     F(GIGA_DRAIN) \
     F(SAFEGUARD) \
     F(FRUSTRATION) \
-    F(SOLAR_BEAM) \
-    F(IRON_TAIL) \
+    F(MAGICAL_LEAF) \
+    F(FLASH_CANNON) \
     F(THUNDERBOLT) \
     F(THUNDER) \
     F(EARTHQUAKE) \
@@ -33,24 +33,24 @@
     F(PSYCHIC) \
     F(SHADOW_BALL) \
     F(BRICK_BREAK) \
-    F(DOUBLE_TEAM) \
+    F(IMPRISON) \
     F(REFLECT) \
     F(SHOCK_WAVE) \
     F(FLAMETHROWER) \
     F(SLUDGE_BOMB) \
-    F(SANDSTORM) \
+    F(ROCK_SLIDE) \
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \
     F(AERIAL_ACE) \
     F(TORMENT) \
     F(FACADE) \
     F(SECRET_POWER) \
-    F(REST) \
+    F(HYDRO_PUMP) \
     F(ATTRACT) \
     F(THIEF) \
     F(STEEL_WING) \
     F(SKILL_SWAP) \
-    F(SNATCH) \
+    F(AIR_SLASH) \
     F(OVERHEAT)
 
 #define FOREACH_HM(F) \
