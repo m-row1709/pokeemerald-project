@@ -15,13 +15,13 @@ SINGLE_BATTLE_TEST("Encore forces consecutive move uses for 2 turns for player")
         TURN { MOVE(player, MOVE_CELEBRATE); MOVE(opponent, MOVE_ENCORE); }
         TURN { FORCED_MOVE(player); }
         TURN { FORCED_MOVE(player); }
-        TURN { MOVE(player, MOVE_SPLASH); }
+        TURN { MOVE(player, MOVE_SWORDS_DANCE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ENCORE, opponent);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, player);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPLASH, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SWORDS_DANCE, player);
     }
 }
 
@@ -34,13 +34,13 @@ SINGLE_BATTLE_TEST("Encore forces consecutive move uses for 2 turns for opponent
         TURN { MOVE(opponent, MOVE_CELEBRATE); MOVE(player, MOVE_ENCORE); }
         TURN { FORCED_MOVE(opponent); }
         TURN { FORCED_MOVE(opponent); }
-        TURN { MOVE(opponent, MOVE_SPLASH); }
+        TURN { MOVE(opponent, MOVE_SWORDS_DANCE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ENCORE, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponent);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPLASH, opponent);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SWORDS_DANCE, opponent);
     }
 }
 
@@ -64,7 +64,7 @@ SINGLE_BATTLE_TEST("Encore overrides the chosen move if it occurs first")
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_CELEBRATE); }
-        TURN { MOVE(opponent, MOVE_ENCORE); MOVE(player, MOVE_SPLASH); }
+        TURN { MOVE(opponent, MOVE_ENCORE); MOVE(player, MOVE_SWORDS_DANCE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ENCORE, opponent);

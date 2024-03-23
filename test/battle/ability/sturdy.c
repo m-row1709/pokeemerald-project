@@ -4,13 +4,13 @@
 SINGLE_BATTLE_TEST("Sturdy prevents OHKO moves")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_FISSURE].effect == EFFECT_OHKO);
+        ASSUME(gMovesInfo[MOVE_SHEER_COLD].effect == EFFECT_OHKO);
         PLAYER(SPECIES_GEODUDE) { Ability(ABILITY_STURDY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(opponent, MOVE_FISSURE); }
+        TURN { MOVE(opponent, MOVE_SHEER_COLD); }
     } SCENE {
-        MESSAGE("Foe Wobbuffet used Fissure!");
+        MESSAGE("Foe Wobbuffet used Sheer Cold!");
         ABILITY_POPUP(player, ABILITY_STURDY);
         MESSAGE("Geodude was protected by Sturdy!");
     } THEN {

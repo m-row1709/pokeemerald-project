@@ -52,15 +52,15 @@ SINGLE_BATTLE_TEST("Micle Berry raises the holder's accuracy by 1.2")
 {
     PASSES_RANDOMLY(24, 25, RNG_ACCURACY);
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_SUBMISSION].accuracy == 80);
+        ASSUME(gMovesInfo[MOVE_HIGH_JUMP_KICK].accuracy == 80);
         PLAYER(SPECIES_WOBBUFFET) { MaxHP(160); HP(80); Item(ITEM_MICLE_BERRY); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(opponent, MOVE_DRAGON_RAGE); MOVE(player, MOVE_SUBMISSION); }
+        TURN { MOVE(opponent, MOVE_DRAGON_RAGE); MOVE(player, MOVE_HIGH_JUMP_KICK); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_DRAGON_RAGE, opponent);
         ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
         MESSAGE("Wobbuffet boosted the accuracy of its next move using Micle Berry!");
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SUBMISSION, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HIGH_JUMP_KICK, player);
     }
 }

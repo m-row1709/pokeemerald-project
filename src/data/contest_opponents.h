@@ -739,7 +739,7 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_DIG,
             MOVE_EARTHQUAKE,
-            MOVE_FISSURE,
+            MOVE_SLASH,
             MOVE_MAGNITUDE
         },
         .cool = 4,
@@ -1157,7 +1157,7 @@ const struct ContestPokemon gContestOpponents[] =
         .aiPool_Tough = FALSE,
         .moves =
         {
-            MOVE_SPLASH,
+            MOVE_PSYWAVE,
             MOVE_CONFUSE_RAY,
             MOVE_SNORE,
             MOVE_REST
@@ -1215,7 +1215,7 @@ const struct ContestPokemon gContestOpponents[] =
         {
             MOVE_HORN_ATTACK,
             MOVE_FURY_ATTACK,
-            MOVE_HORN_DRILL,
+            MOVE_FLAIL,
             MOVE_TAIL_WHIP
         },
         .cool = 70,
@@ -1354,7 +1354,7 @@ const struct ContestPokemon gContestOpponents[] =
         .moves =
         {
             MOVE_FACADE,
-            MOVE_FURY_CUTTER,
+            MOVE_X_SCISSOR,
             MOVE_FLY,
             MOVE_RETURN
         },
@@ -1606,7 +1606,7 @@ const struct ContestPokemon gContestOpponents[] =
         .moves =
         {
             MOVE_GROWTH,
-            MOVE_RAZOR_WIND,
+            MOVE_RAZOR_LEAF,
             MOVE_EXPLOSION,
             MOVE_EXTRASENSORY
         },
@@ -1888,7 +1888,7 @@ const struct ContestPokemon gContestOpponents[] =
             MOVE_WATER_PULSE,
             MOVE_REST,
             MOVE_WATER_SPOUT,
-            MOVE_SPLASH
+            MOVE_SLEEP_TALK
         },
         .cool = 30,
         .beauty = 100,
@@ -1914,7 +1914,7 @@ const struct ContestPokemon gContestOpponents[] =
         .moves =
         {
             MOVE_TACKLE,
-            MOVE_SPLASH,
+            MOVE_HYDRO_PUMP,
             MOVE_FLAIL,
             MOVE_TACKLE
         },
@@ -2725,8 +2725,8 @@ const struct ContestPokemon gContestOpponents[] =
         .aiPool_Tough = TRUE,
         .moves =
         {
-            MOVE_OUTRAGE,
-            MOVE_SLAM,
+            MOVE_DRAGON_CLAW,
+            MOVE_EXTREME_SPEED,
             MOVE_TWISTER,
             MOVE_EARTHQUAKE
         },

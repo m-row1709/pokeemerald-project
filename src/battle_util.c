@@ -3157,8 +3157,6 @@ void TryClearRageAndFuryCutter(void)
     {
         if ((gBattleMons[i].status2 & STATUS2_RAGE) && gChosenMoveByBattler[i] != MOVE_RAGE)
             gBattleMons[i].status2 &= ~STATUS2_RAGE;
-        if (gDisableStructs[i].furyCutterCounter != 0 && gChosenMoveByBattler[i] != MOVE_FURY_CUTTER)
-            gDisableStructs[i].furyCutterCounter = 0;
     }
 }
 

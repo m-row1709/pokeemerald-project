@@ -89,14 +89,14 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot be hit by weight-based mo
 SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon cannot be hit by OHKO moves")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_FISSURE].effect == EFFECT_OHKO);
+        ASSUME(gMovesInfo[MOVE_SHEER_COLD].effect == EFFECT_OHKO);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_MACHAMP) { Ability(ABILITY_NO_GUARD); }
     } WHEN {
-        TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_FISSURE); }
+        TURN { MOVE(player, MOVE_TACKLE, dynamax: TRUE); MOVE(opponent, MOVE_SHEER_COLD); }
     } SCENE {
         MESSAGE("Wobbuffet used Max Strike!");
-        MESSAGE("Foe Machamp used Fissure!");
+        MESSAGE("Foe Machamp used Sheer Cold!");
         MESSAGE("Wobbuffet is unaffected!");
         NONE_OF { HP_BAR(player); }
     }
@@ -115,21 +115,6 @@ SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are not affected by Destiny Bond
         MESSAGE("Wobbuffet used Max Strike!");
         MESSAGE("Foe Wobbuffet fainted!");
         NONE_OF { HP_BAR(player); }
-    }
-}
-
-SINGLE_BATTLE_TEST("(DYNAMAX) Dynamaxed Pokemon are affected by Grudge")
-{
-    GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { Speed(50); };
-        OPPONENT(SPECIES_WOBBUFFET) { HP(1); Speed(100); }
-    } WHEN {
-        TURN { MOVE(opponent, MOVE_GRUDGE); MOVE(player, MOVE_TACKLE, dynamax: TRUE); }
-    } SCENE {
-        MESSAGE("Foe Wobbuffet used Grudge!");
-        MESSAGE("Wobbuffet used Max Strike!");
-        MESSAGE("Wobbuffet's Tackle lost all its PP due to the GRUDGE!");
-        MESSAGE("Foe Wobbuffet fainted!");
     }
 }
 
@@ -1164,26 +1149,26 @@ DOUBLE_BATTLE_TEST("(DYNAMAX) G-Max Meltdown torments both opponents for 3 turns
         ASSUME(gMovesInfo[MOVE_G_MAX_MELTDOWN].argument == MAX_EFFECT_TORMENT_FOES);
         PLAYER(SPECIES_MELMETAL) { GigantamaxFactor(TRUE); }
         PLAYER(SPECIES_MELTAN);
-        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
-        OPPONENT(SPECIES_WYNAUT) { Moves(MOVE_SPLASH, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_SWORDS_DANCE, MOVE_CELEBRATE); }
+        OPPONENT(SPECIES_WYNAUT) { Moves(MOVE_SWORDS_DANCE, MOVE_CELEBRATE); }
     } WHEN {
         TURN { MOVE(playerLeft, MOVE_IRON_HEAD, target: opponentLeft, dynamax: TRUE); \
-               MOVE(opponentLeft, MOVE_SPLASH); MOVE(opponentRight, MOVE_SPLASH); }
+               MOVE(opponentLeft, MOVE_SWORDS_DANCE); MOVE(opponentRight, MOVE_SWORDS_DANCE); }
         TURN { MOVE(playerLeft, MOVE_CELEBRATE, target: opponentLeft); \
-               MOVE(opponentLeft, MOVE_SPLASH, allowed: FALSE); \
+               MOVE(opponentLeft, MOVE_SWORDS_DANCE, allowed: FALSE); \
                MOVE(opponentLeft, MOVE_CELEBRATE); \
-               MOVE(opponentRight, MOVE_SPLASH, allowed: FALSE); \
+               MOVE(opponentRight, MOVE_SWORDS_DANCE, allowed: FALSE); \
                MOVE(opponentRight, MOVE_CELEBRATE); }
         TURN { MOVE(playerLeft, MOVE_CELEBRATE, target: opponentLeft); \
-               MOVE(opponentLeft, MOVE_SPLASH); \
-               MOVE(opponentRight, MOVE_SPLASH); }
+               MOVE(opponentLeft, MOVE_SWORDS_DANCE); \
+               MOVE(opponentRight, MOVE_SWORDS_DANCE); }
     } SCENE {
         // turn 1
         MESSAGE("Melmetal used G-Max Meltdown!");
         MESSAGE("Foe Wobbuffet was subjected to torment!");
         MESSAGE("Foe Wynaut was subjected to torment!");
-        MESSAGE("Foe Wobbuffet used Splash!");
-        MESSAGE("Foe Wynaut used Splash!");
+        MESSAGE("Foe Wobbuffet used Swords Dance!");
+        MESSAGE("Foe Wynaut used Swords Dance!");
         // turn 2
         MESSAGE("Foe Wobbuffet used Celebrate!");
         MESSAGE("Foe Wynaut used Celebrate!");

@@ -77,19 +77,19 @@ AI_SINGLE_BATTLE_TEST("AI prefers moves with better accuracy, but only if they b
     abilityAtk = ABILITY_NONE;
     expectedMove2 = MOVE_NONE;
 
-    // Here it's a simple test, both Slam and Strength deal the same damage, but Strength always hits, whereas Slam often misses.
-    PARAMETRIZE { move1 = MOVE_SLAM; move2 = MOVE_STRENGTH; move3 = MOVE_TACKLE; hp = 490; expectedMove = MOVE_STRENGTH; turns = 4; }
-    PARAMETRIZE { move1 = MOVE_SLAM; move2 = MOVE_STRENGTH; move3 = MOVE_SWIFT; move4 = MOVE_TACKLE; hp = 365; expectedMove = MOVE_STRENGTH; turns = 3; }
-    PARAMETRIZE { move1 = MOVE_SLAM; move2 = MOVE_STRENGTH; move3 = MOVE_SWIFT; move4 = MOVE_TACKLE; hp = 245; expectedMove = MOVE_STRENGTH; turns = 2; }
-    PARAMETRIZE { move1 = MOVE_SLAM; move2 = MOVE_STRENGTH; move3 = MOVE_SWIFT; move4 = MOVE_TACKLE; hp = 125; expectedMove = MOVE_STRENGTH; turns = 1; }
+    // Here it's a simple test, both Mega Punch and Strength deal the same damage, but Strength always hits, whereas Mega Punch often misses.
+    PARAMETRIZE { move1 = MOVE_MEGA_PUNCH; move2 = MOVE_STRENGTH; move3 = MOVE_TACKLE; hp = 490; expectedMove = MOVE_STRENGTH; turns = 4; }
+    PARAMETRIZE { move1 = MOVE_MEGA_PUNCH; move2 = MOVE_STRENGTH; move3 = MOVE_SWIFT; move4 = MOVE_TACKLE; hp = 365; expectedMove = MOVE_STRENGTH; turns = 3; }
+    PARAMETRIZE { move1 = MOVE_MEGA_PUNCH; move2 = MOVE_STRENGTH; move3 = MOVE_SWIFT; move4 = MOVE_TACKLE; hp = 245; expectedMove = MOVE_STRENGTH; turns = 2; }
+    PARAMETRIZE { move1 = MOVE_MEGA_PUNCH; move2 = MOVE_STRENGTH; move3 = MOVE_SWIFT; move4 = MOVE_TACKLE; hp = 125; expectedMove = MOVE_STRENGTH; turns = 1; }
     // Mega Kick deals more damage, but can miss more often. Here, AI should choose Mega Kick if it can faint target in less number of turns than Strength. Otherwise, it should use Strength.
     PARAMETRIZE { move1 = MOVE_MEGA_KICK; move2 = MOVE_STRENGTH; move3 = MOVE_SWIFT; move4 = MOVE_TACKLE; hp = 170; expectedMove = MOVE_MEGA_KICK; turns = 1; }
     PARAMETRIZE { move1 = MOVE_MEGA_KICK; move2 = MOVE_STRENGTH; move3 = MOVE_SWIFT; move4 = MOVE_TACKLE; hp = 245; expectedMove = MOVE_STRENGTH; turns = 2; }
     // Swift always hits and Guts has accuracy of 100%. Hustle lowers accuracy of all physical moves.
     PARAMETRIZE { abilityAtk = ABILITY_HUSTLE; move1 = MOVE_MEGA_KICK; move2 = MOVE_STRENGTH; move3 = MOVE_SWIFT; move4 = MOVE_TACKLE; hp = 5; expectedMove = MOVE_SWIFT; turns = 1; }
     PARAMETRIZE { abilityAtk = ABILITY_HUSTLE; move1 = MOVE_MEGA_KICK; move2 = MOVE_STRENGTH; move3 = MOVE_GUST; move4 = MOVE_TACKLE; hp = 5; expectedMove = MOVE_GUST; turns = 1; }
-    // Mega Kick and Slam both have lower accuracy. Gust and Tackle both have 100, so AI can choose either of them.
-    PARAMETRIZE { move1 = MOVE_MEGA_KICK; move2 = MOVE_SLAM; move3 = MOVE_TACKLE; move4 = MOVE_GUST; hp = 5; expectedMove = MOVE_GUST; expectedMove2 = MOVE_TACKLE; turns = 1; }
+    // Mega Kick and Mega Punch both have lower accuracy. Gust and Tackle both have 100, so AI can choose either of them.
+    PARAMETRIZE { move1 = MOVE_MEGA_KICK; move2 = MOVE_MEGA_PUNCH; move3 = MOVE_TACKLE; move4 = MOVE_GUST; hp = 5; expectedMove = MOVE_GUST; expectedMove2 = MOVE_TACKLE; turns = 1; }
     // All moves hit with No guard ability
     PARAMETRIZE { move1 = MOVE_MEGA_KICK; move2 = MOVE_GUST; hp = 5; expectedMove = MOVE_MEGA_KICK; expectedMove2 = MOVE_GUST; turns = 1; }
     // Tests to compare move that always hits and a beneficial effect. A move with higher acc should be chosen in this case.
@@ -101,16 +101,16 @@ AI_SINGLE_BATTLE_TEST("AI prefers moves with better accuracy, but only if they b
         PLAYER(SPECIES_WOBBUFFET) { HP(hp); }
         PLAYER(SPECIES_WOBBUFFET);
         ASSUME(gMovesInfo[MOVE_SWIFT].accuracy == 0);
-        ASSUME(gMovesInfo[MOVE_SLAM].power == gMovesInfo[MOVE_STRENGTH].power);
+        ASSUME(gMovesInfo[MOVE_MEGA_PUNCH].power == gMovesInfo[MOVE_STRENGTH].power);
         ASSUME(gMovesInfo[MOVE_MEGA_KICK].power > gMovesInfo[MOVE_STRENGTH].power);
-        ASSUME(gMovesInfo[MOVE_SLAM].accuracy < gMovesInfo[MOVE_STRENGTH].accuracy);
+        ASSUME(gMovesInfo[MOVE_MEGA_PUNCH].accuracy < gMovesInfo[MOVE_STRENGTH].accuracy);
         ASSUME(gMovesInfo[MOVE_MEGA_KICK].accuracy < gMovesInfo[MOVE_STRENGTH].accuracy);
         ASSUME(gMovesInfo[MOVE_TACKLE].accuracy == 100);
         ASSUME(gMovesInfo[MOVE_GUST].accuracy == 100);
         ASSUME(gMovesInfo[MOVE_SHOCK_WAVE].accuracy == 0);
         ASSUME(gMovesInfo[MOVE_THUNDERBOLT].accuracy == 100);
         ASSUME(gMovesInfo[MOVE_ICY_WIND].accuracy != 100);
-        ASSUME(gMovesInfo[MOVE_SLAM].category == DAMAGE_CATEGORY_PHYSICAL);
+        ASSUME(gMovesInfo[MOVE_MEGA_PUNCH].category == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(gMovesInfo[MOVE_STRENGTH].category == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(gMovesInfo[MOVE_TACKLE].category == DAMAGE_CATEGORY_PHYSICAL);
         ASSUME(gMovesInfo[MOVE_MEGA_KICK].category == DAMAGE_CATEGORY_PHYSICAL);
@@ -292,9 +292,9 @@ AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking 
     // Psychic and Solar Beam are chosen because user is holding Power Herb
     PARAMETRIZE { abilityAtk = ABILITY_STURDY; holdItemAtk = ITEM_POWER_HERB; move1 = MOVE_FOCUS_BLAST; move2 = MOVE_SOLAR_BEAM; move3 = MOVE_PSYCHIC; move4 = MOVE_DOUBLE_EDGE;
                   expectedMove = MOVE_PSYCHIC; expectedMove2 = MOVE_SOLAR_BEAM; }
-    // Skull Bash is chosen because it's the most accurate and is holding Power Herb
-    PARAMETRIZE { abilityAtk = ABILITY_STURDY; holdItemAtk = ITEM_POWER_HERB; move1 = MOVE_FOCUS_BLAST; move2 = MOVE_SKULL_BASH; move3 = MOVE_SLAM; move4 = MOVE_DOUBLE_EDGE;
-                  expectedMove = MOVE_SKULL_BASH; }
+    // Solar Beam is chosen because it's the most accurate and is holding Power Herb
+    PARAMETRIZE { abilityAtk = ABILITY_STURDY; holdItemAtk = ITEM_POWER_HERB; move1 = MOVE_FOCUS_BLAST; move2 = MOVE_SOLAR_BEAM; move3 = MOVE_MEGA_PUNCH; move4 = MOVE_DOUBLE_EDGE;
+                  expectedMove = MOVE_SOLAR_BEAM; }
 
     GIVEN {
         AI_FLAGS(AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT);
@@ -317,11 +317,11 @@ AI_SINGLE_BATTLE_TEST("AI chooses the safest option to faint the target, taking 
     u16 expectedMove, expectedMove2 = MOVE_NONE;
     u16 abilityAtk = ABILITY_NONE, holdItemAtk = ITEM_NONE;
 
-    // Fiery Dance and Skull Bash are chosen because user is holding Power Herb
-    PARAMETRIZE { abilityAtk = ABILITY_STURDY; holdItemAtk = ITEM_POWER_HERB; move1 = MOVE_FOCUS_BLAST; move2 = MOVE_SKULL_BASH; move3 = MOVE_FIERY_DANCE; move4 = MOVE_DOUBLE_EDGE;
-                  expectedMove = MOVE_FIERY_DANCE; expectedMove2 = MOVE_SKULL_BASH; }
-    // Crabhammer is chosen even if Skull Bash is more accurate, the user has no Power Herb
-    PARAMETRIZE { abilityAtk = ABILITY_STURDY; move1 = MOVE_FOCUS_BLAST; move2 = MOVE_SKULL_BASH; move3 = MOVE_SLAM; move4 = MOVE_CRABHAMMER;
+    // Fiery Dance and Solar Beam are chosen because user is holding Power Herb
+    PARAMETRIZE { abilityAtk = ABILITY_STURDY; holdItemAtk = ITEM_POWER_HERB; move1 = MOVE_FOCUS_BLAST; move2 = MOVE_SOLAR_BEAM; move3 = MOVE_FIERY_DANCE; move4 = MOVE_DOUBLE_EDGE;
+                  expectedMove = MOVE_FIERY_DANCE; expectedMove2 = MOVE_SOLAR_BEAM; }
+    // Crabhammer is chosen even if Solar Beam is more accurate, the user has no Power Herb
+    PARAMETRIZE { abilityAtk = ABILITY_STURDY; move1 = MOVE_FOCUS_BLAST; move2 = MOVE_SOLAR_BEAM; move3 = MOVE_MEGA_PUNCH; move4 = MOVE_CRABHAMMER;
                   expectedMove = MOVE_CRABHAMMER; }
 
     KNOWN_FAILING;
@@ -477,10 +477,10 @@ AI_SINGLE_BATTLE_TEST("AI without any flags chooses moves at random - singles")
     GIVEN {
         AI_FLAGS(0);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_NIDOQUEEN) { Moves(MOVE_SPLASH, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND); }
+        OPPONENT(SPECIES_NIDOQUEEN) { Moves(MOVE_CELEBRATE, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND); }
     } WHEN {
-            TURN { EXPECT_MOVES(opponent, MOVE_SPLASH, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND);
-                   SCORE_EQ_VAL(opponent, MOVE_SPLASH, AI_SCORE_DEFAULT);
+            TURN { EXPECT_MOVES(opponent, MOVE_CELEBRATE, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND);
+                   SCORE_EQ_VAL(opponent, MOVE_CELEBRATE, AI_SCORE_DEFAULT);
                    SCORE_EQ_VAL(opponent, MOVE_EXPLOSION, AI_SCORE_DEFAULT);
                    SCORE_EQ_VAL(opponent, MOVE_RAGE, AI_SCORE_DEFAULT);
                    SCORE_EQ_VAL(opponent, MOVE_HELPING_HAND, AI_SCORE_DEFAULT);
@@ -494,16 +494,16 @@ AI_DOUBLE_BATTLE_TEST("AI without any flags chooses moves at random - doubles")
         AI_FLAGS(0);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
-        OPPONENT(SPECIES_NIDOQUEEN) { Moves(MOVE_SPLASH, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND); }
-        OPPONENT(SPECIES_NIDOQUEEN) { Moves(MOVE_SPLASH, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND); }
+        OPPONENT(SPECIES_NIDOQUEEN) { Moves(MOVE_CELEBRATE, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND); }
+        OPPONENT(SPECIES_NIDOQUEEN) { Moves(MOVE_CELEBRATE, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND); }
     } WHEN {
-            TURN { EXPECT_MOVES(opponentLeft, MOVE_SPLASH, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND);
-                   EXPECT_MOVES(opponentRight, MOVE_SPLASH, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND);
-                   SCORE_EQ_VAL(opponentLeft, MOVE_SPLASH, AI_SCORE_DEFAULT, target:playerLeft);
+            TURN { EXPECT_MOVES(opponentLeft, MOVE_CELEBRATE, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND);
+                   EXPECT_MOVES(opponentRight, MOVE_CELEBRATE, MOVE_EXPLOSION, MOVE_RAGE, MOVE_HELPING_HAND);
+                   SCORE_EQ_VAL(opponentLeft, MOVE_CELEBRATE, AI_SCORE_DEFAULT, target:playerLeft);
                    SCORE_EQ_VAL(opponentLeft, MOVE_EXPLOSION, AI_SCORE_DEFAULT, target:playerLeft);
                    SCORE_EQ_VAL(opponentLeft, MOVE_RAGE, AI_SCORE_DEFAULT, target:playerLeft);
                    SCORE_EQ_VAL(opponentLeft, MOVE_HELPING_HAND, AI_SCORE_DEFAULT, target:playerLeft);
-                   SCORE_EQ_VAL(opponentRight, MOVE_SPLASH, AI_SCORE_DEFAULT, target:playerLeft);
+                   SCORE_EQ_VAL(opponentRight, MOVE_CELEBRATE, AI_SCORE_DEFAULT, target:playerLeft);
                    SCORE_EQ_VAL(opponentRight, MOVE_EXPLOSION, AI_SCORE_DEFAULT, target:playerLeft);
                    SCORE_EQ_VAL(opponentRight, MOVE_RAGE, AI_SCORE_DEFAULT, target:playerLeft);
                    SCORE_EQ_VAL(opponentRight, MOVE_HELPING_HAND, AI_SCORE_DEFAULT, target:playerLeft);

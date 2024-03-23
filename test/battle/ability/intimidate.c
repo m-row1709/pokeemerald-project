@@ -138,11 +138,11 @@ DOUBLE_BATTLE_TEST("Intimidate activates on an empty slot")
         TURN {
             SWITCH(playerLeft, 2);
             MOVE(playerRight, MOVE_GUNK_SHOT, target: opponentLeft);
-            MOVE(opponentRight, MOVE_SPLASH);
+            MOVE(opponentRight, MOVE_CELEBRATE);
         }
         TURN {
             SWITCH(playerLeft, 3);
-            MOVE(playerRight, MOVE_SPLASH);
+            MOVE(playerRight, MOVE_CELEBRATE);
             }
 
 
@@ -150,7 +150,7 @@ DOUBLE_BATTLE_TEST("Intimidate activates on an empty slot")
         MESSAGE("Wobbuffet, that's enough! Come back!");
         MESSAGE("Go! Wynaut!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_GUNK_SHOT, playerRight);
-        ANIMATION(ANIM_TYPE_MOVE, MOVE_SPLASH, opponentRight);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, opponentRight);
         MESSAGE("Wynaut, that's enough! Come back!");
         MESSAGE("Go! Hitmontop!");
         ABILITY_POPUP(playerLeft, ABILITY_INTIMIDATE);

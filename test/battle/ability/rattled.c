@@ -3,8 +3,8 @@
 
 ASSUMPTIONS
 {
-    ASSUME(gMovesInfo[MOVE_FURY_CUTTER].type == TYPE_BUG);
-    ASSUME(gMovesInfo[MOVE_FURY_CUTTER].power != 0);
+    ASSUME(gMovesInfo[MOVE_X_SCISSOR].type == TYPE_BUG);
+    ASSUME(gMovesInfo[MOVE_X_SCISSOR].power != 0);
     ASSUME(gMovesInfo[MOVE_FEINT_ATTACK].type == TYPE_DARK);
     ASSUME(gMovesInfo[MOVE_FEINT_ATTACK].power != 0);
     ASSUME(gMovesInfo[MOVE_SHADOW_PUNCH].type == TYPE_GHOST);
@@ -16,7 +16,7 @@ ASSUMPTIONS
 SINGLE_BATTLE_TEST("Rattled boosts speed by 1 when hit by Bug, Dark or Ghost type move")
 {
     u16 move;
-    PARAMETRIZE { move = MOVE_FURY_CUTTER; }
+    PARAMETRIZE { move = MOVE_X_SCISSOR; }
     PARAMETRIZE { move = MOVE_FEINT_ATTACK; }
     PARAMETRIZE { move = MOVE_SHADOW_PUNCH; }
     PARAMETRIZE { move = MOVE_TACKLE; }

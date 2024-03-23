@@ -14,13 +14,13 @@ SINGLE_BATTLE_TEST("Embargo blocks the effect of an affected Pokémon's held ite
         OPPONENT(SPECIES_WOBBUFFET) { Item(ITEM_FOCUS_SASH); };
     } WHEN {
         TURN { MOVE(player, MOVE_EMBARGO); }
-        TURN { MOVE(player, MOVE_FISSURE); }
+        TURN { MOVE(player, MOVE_SHEER_COLD); }
     } SCENE {
         // Turn 1
         MESSAGE("Wobbuffet used Embargo!");
         MESSAGE("Foe Wobbuffet can't use items anymore!");
         // Turn 2
-        MESSAGE("Wobbuffet used Fissure!");
+        MESSAGE("Wobbuffet used Sheer Cold!");
         HP_BAR(opponent, hp: 0);
     }
 }

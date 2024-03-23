@@ -16,7 +16,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round1[] =
         .species = SPECIES_PIKACHU,
         .lvl = 37,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT, MOVE_SLAM, MOVE_NONE}
+        .moves = {MOVE_THUNDER_WAVE, MOVE_THUNDERBOLT, MOVE_BODY_SLAM, MOVE_NONE}
     },
     {
         .species = SPECIES_ELECTABUZZ,
@@ -166,19 +166,19 @@ static const struct PyramidWildMon sLevel50WildMons_Round4[] =
         .species = SPECIES_BANETTE,
         .lvl = 41,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_GRUDGE, MOVE_WILL_O_WISP, MOVE_NIGHT_SHADE, MOVE_NONE}
+        .moves = {MOVE_SHADOW_BALL, MOVE_WILL_O_WISP, MOVE_NIGHT_SHADE, MOVE_NONE}
     },
     {
         .species = SPECIES_MISDREAVUS,
         .lvl = 42,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_GRUDGE, MOVE_SPITE, MOVE_SHADOW_BALL, MOVE_NONE}
+        .moves = {MOVE_PSYCHIC, MOVE_SPITE, MOVE_SHADOW_BALL, MOVE_NONE}
     },
     {
         .species = SPECIES_NINETALES,
         .lvl = 42,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_GRUDGE, MOVE_WILL_O_WISP, MOVE_OVERHEAT, MOVE_NONE}
+        .moves = {MOVE_EXTRASENSORY, MOVE_WILL_O_WISP, MOVE_OVERHEAT, MOVE_NONE}
     },
     {
         .species = SPECIES_ABSOL,
@@ -196,13 +196,13 @@ static const struct PyramidWildMon sLevel50WildMons_Round4[] =
         .species = SPECIES_SHEDINJA,
         .lvl = 45,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_GRUDGE, MOVE_TOXIC, MOVE_SPITE, MOVE_NONE}
+        .moves = {MOVE_PROTECT, MOVE_TOXIC, MOVE_SPITE, MOVE_NONE}
     },
     {
         .species = SPECIES_GENGAR,
         .lvl = 45,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_GRUDGE, MOVE_SPITE, MOVE_NIGHT_SHADE, MOVE_NONE}
+        .moves = {MOVE_SHADOW_BALL, MOVE_SPITE, MOVE_NIGHT_SHADE, MOVE_NONE}
     }
 };
 
@@ -276,7 +276,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round6[] =
         .species = SPECIES_WYNAUT,
         .lvl = 42,
         .abilityNum = 0,
-        .moves = {MOVE_DESTINY_BOND, MOVE_SPLASH, MOVE_COUNTER, MOVE_MIRROR_COAT}
+        .moves = {MOVE_DESTINY_BOND, MOVE_ENCORE, MOVE_COUNTER, MOVE_MIRROR_COAT}
     },
     {
         .species = SPECIES_DIGLETT,
@@ -524,7 +524,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round11[] =
         .species = SPECIES_POLIWRATH,
         .lvl = 41,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_SUBMISSION, MOVE_FOCUS_PUNCH, MOVE_SURF, MOVE_NONE}
+        .moves = {MOVE_BRICK_BREAK, MOVE_FOCUS_PUNCH, MOVE_SURF, MOVE_NONE}
     },
     {
         .species = SPECIES_HARIYAMA,
@@ -646,7 +646,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round13[] =
         .species = SPECIES_SCIZOR,
         .lvl = 46,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_QUICK_ATTACK, MOVE_METAL_CLAW, MOVE_FURY_CUTTER, MOVE_PURSUIT}
+        .moves = {MOVE_QUICK_ATTACK, MOVE_METAL_CLAW, MOVE_X_SCISSOR, MOVE_PURSUIT}
     },
     {
         .species = SPECIES_HERACROSS,
@@ -670,7 +670,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round13[] =
         .species = SPECIES_SHEDINJA,
         .lvl = 50,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_SHADOW_BALL, MOVE_TOXIC, MOVE_SPITE, MOVE_GRUDGE}
+        .moves = {MOVE_SHADOW_BALL, MOVE_TOXIC, MOVE_SPITE, MOVE_X_SCISSOR}
     }
 };
 
@@ -820,7 +820,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round16[] =
         .species = SPECIES_SHEDINJA,
         .lvl = 50,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_SHADOW_BALL, MOVE_SPITE, MOVE_GRUDGE, MOVE_PROTECT}
+        .moves = {MOVE_SHADOW_BALL, MOVE_SPITE, MOVE_X_SCISSOR, MOVE_PROTECT}
     },
     {
         .species = SPECIES_GENGAR,
@@ -952,7 +952,7 @@ static const struct PyramidWildMon sLevel50WildMons_Round19[] =
         .species = SPECIES_RAICHU,
         .lvl = 46,
         .abilityNum = ABILITY_RANDOM,
-        .moves = {MOVE_THUNDER, MOVE_THUNDER_WAVE, MOVE_SLAM, MOVE_NONE}
+        .moves = {MOVE_THUNDER, MOVE_THUNDER_WAVE, MOVE_BODY_SLAM, MOVE_NONE}
     },
     {
         .species = SPECIES_VAPOREON,

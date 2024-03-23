@@ -88,9 +88,8 @@ static const u16 sFrostbiteMoves[] = {
     MOVE_FREEZING_GLARE,
 };
 
-// EFFECT_GRUDGE, EFFECT_SPITE, EFFECT_EERIE_SPELL
+// EFFECT_SPITE, EFFECT_EERIE_SPELL
 static const u16 sPPReducingMoves[] = {
-    MOVE_GRUDGE,
     MOVE_SPITE,
     MOVE_EERIE_SPELL,
 };

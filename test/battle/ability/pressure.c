@@ -27,17 +27,15 @@ DOUBLE_BATTLE_TEST("Pressure's effect stacks with multiple Pokémon")
     }
 }
 
-SINGLE_BATTLE_TEST("Pressure's effect applies to Imprison and Snatch")
+SINGLE_BATTLE_TEST("Pressure's effect applies to Imprison")
 {
     GIVEN {
-        PLAYER(SPECIES_WOBBUFFET) { MovesWithPP({MOVE_IMPRISON, 10}, {MOVE_SNATCH, 10}); }
+        PLAYER(SPECIES_WOBBUFFET) { MovesWithPP({MOVE_IMPRISON, 10}); }
         OPPONENT(SPECIES_WOBBUFFET) { Ability(ABILITY_PRESSURE); }
     } WHEN {
         TURN { MOVE(player, MOVE_IMPRISON); }
-        TURN { MOVE(player, MOVE_SNATCH); }
     } THEN {
         EXPECT_EQ(player->pp[0], 8);
-        EXPECT_EQ(player->pp[1], 8);
     }
 }
 

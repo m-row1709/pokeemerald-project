@@ -191,8 +191,8 @@ static const struct TrainerHillFloor sFloors_JPDefault[] = {
                 .name = __("シゲゾウ$$$$   "),
                 .facilityClass = FACILITY_CLASS_NINJA_BOY,
                 .unused = TRUE,
-                .speechBefore = { EC_WORD_WIN, EC_WORD_UNTIL, EC_WORD_DAUGHTER, EC_MOVE(CONSTRICT), EC_WORD_OF, EC_WORD_WERE },
-                .speechWin = { EC_MOVE(CONSTRICT), EC_WORD_UNTIL, EC_WORD_LESS, EC_WORD_NONE, EC_WORD_HEY_QUES, EC_WORD_EXCL },
+                .speechBefore = { EC_WORD_WIN, EC_WORD_UNTIL, EC_WORD_DAUGHTER, EC_MOVE(WRAP), EC_WORD_OF, EC_WORD_WERE },
+                .speechWin = { EC_MOVE(WRAP), EC_WORD_UNTIL, EC_WORD_LESS, EC_WORD_NONE, EC_WORD_HEY_QUES, EC_WORD_EXCL },
                 .speechLose = { EC_WORD_YET, EC_WORD_ELLIPSIS_ELLIPSIS_ELLIPSIS, EC_WORD_URGH, EC_WORD_ALMOST, EC_WORD_POWER, EC_WORD_NONE },
                 .speechAfter = { EC_WORD_HUH_QUES, EC_WORD_TOMORROW, EC_WORD_SMELL, EC_WORD_ABSOLUTELY, EC_WORD_THOSE, EC_WORD_EXCL_EXCL },
                 .mons = {
@@ -535,7 +535,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     {
                         .species = SPECIES_AMPHAROS,
                         .heldItem = ITEM_MAGNET,
-                        .moves = {MOVE_THUNDER, MOVE_THUNDER_WAVE, MOVE_COTTON_SPORE, MOVE_LIGHT_SCREEN},
+                        .moves = {MOVE_THUNDER, MOVE_THUNDER_WAVE, MOVE_DRAGON_BREATH, MOVE_LIGHT_SCREEN},
                         .speedEV = 255,
                         .spAttackEV = 255,
                         .otId = TRAINER_HILL_OTID,
@@ -611,7 +611,7 @@ static const struct TrainerHillFloor sFloors_Normal[] =
                     {
                         .species = SPECIES_PINSIR,
                         .heldItem = ITEM_QUICK_CLAW,
-                        .moves = {MOVE_GUILLOTINE, MOVE_BRICK_BREAK, MOVE_SWAGGER, MOVE_FEINT_ATTACK},
+                        .moves = {MOVE_X_SCISSOR, MOVE_BRICK_BREAK, MOVE_SWAGGER, MOVE_FEINT_ATTACK},
                         .hpEV = 200,
                         .defenseEV = 155,
                         .spDefenseEV = 155,
@@ -1497,7 +1497,7 @@ static const struct TrainerHillFloor sFloors_Variety[] = {
                                         {
                                             .species = SPECIES_DELIBIRD,
                                             .heldItem = ITEM_SITRUS_BERRY,
-                                            .moves = {MOVE_PRESENT, MOVE_SPLASH, MOVE_HAIL, MOVE_PROTECT},
+                                            .moves = {MOVE_PRESENT, MOVE_FAKE_OUT, MOVE_HAIL, MOVE_PROTECT},
                                             .attackEV = 255,
                                             .speedEV = 255,
                                             .otId = TRAINER_HILL_OTID,
@@ -3189,7 +3189,7 @@ static const struct TrainerHillFloor sFloors_Unique[] = {
                                         {
                                             .species = SPECIES_WARTORTLE,
                                             .heldItem = ITEM_MYSTIC_WATER,
-                                            .moves = {MOVE_HYDRO_PUMP, MOVE_SKULL_BASH, MOVE_RAIN_DANCE, MOVE_PROTECT},
+                                            .moves = {MOVE_HYDRO_PUMP, MOVE_ICE_BEAM, MOVE_RAIN_DANCE, MOVE_PROTECT},
                                             .hpEV = 250,
                                             .defenseEV = 130,
                                             .otId = TRAINER_HILL_OTID,
