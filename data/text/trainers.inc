@@ -170,12 +170,12 @@ Route103_Text_AndrewPostBattle:
 	.string "Grrrrr…$"
 
 Route103_Text_MiguelIntro:
-	.string "My POKéMON is delightfully adorable!\n"
+	.string "My bugs are delightfully adorable!\n"
 	.string "Don't be shy--I'll show you!$"
 
 Route103_Text_MiguelDefeated:
 	.string "Oh, my gosh!\n"
-	.string "My darling POKéMON!$"
+	.string "My darling bugs!$"
 
 Route103_Text_MiguelPostBattle:
 	.string "My delightful POKéMON looks darling\n"
