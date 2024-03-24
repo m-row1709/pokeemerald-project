@@ -6412,10 +6412,11 @@ static const struct TrainerMon sParty_WallyVR1[] = {
     }
 };
 
-static const struct TrainerMon sParty_BrendanRoute103Mudkip[] = {
+static const struct TrainerMon sParty_BrendanRoute103Piplup[] = {
     {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 5,
-    .species = SPECIES_TREECKO,
+    .species = SPECIES_TURTWIG,
     }
 };
 
@@ -6455,10 +6456,11 @@ static const struct TrainerMon sParty_BrendanRoute119Mudkip[] = {
     }
 };
 
-static const struct TrainerMon sParty_BrendanRoute103Treecko[] = {
+static const struct TrainerMon sParty_BrendanRoute103Turtwig[] = {
     {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 5,
-    .species = SPECIES_TORCHIC,
+    .species = SPECIES_CHIMCHAR,
     }
 };
 
@@ -6498,10 +6500,11 @@ static const struct TrainerMon sParty_BrendanRoute119Treecko[] = {
     }
 };
 
-static const struct TrainerMon sParty_BrendanRoute103Torchic[] = {
+static const struct TrainerMon sParty_BrendanRoute103Chimchar[] = {
     {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 5,
-    .species = SPECIES_MUDKIP,
+    .species = SPECIES_PIPLUP,
     }
 };
 
@@ -6541,10 +6544,11 @@ static const struct TrainerMon sParty_BrendanRoute119Torchic[] = {
     }
 };
 
-static const struct TrainerMon sParty_MayRoute103Mudkip[] = {
+static const struct TrainerMon sParty_MayRoute103Piplup[] = {
     {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 5,
-    .species = SPECIES_TREECKO,
+    .species = SPECIES_TURTWIG,
     }
 };
 
@@ -6584,10 +6588,11 @@ static const struct TrainerMon sParty_MayRoute119Mudkip[] = {
     }
 };
 
-static const struct TrainerMon sParty_MayRoute103Treecko[] = {
+static const struct TrainerMon sParty_MayRoute103Turtwig[] = {
     {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 5,
-    .species = SPECIES_TORCHIC,
+    .species = SPECIES_CHIMCHAR,
     }
 };
 
@@ -6627,10 +6632,11 @@ static const struct TrainerMon sParty_MayRoute119Treecko[] = {
     }
 };
 
-static const struct TrainerMon sParty_MayRoute103Torchic[] = {
+static const struct TrainerMon sParty_MayRoute103Chimchar[] = {
     {
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 5,
-    .species = SPECIES_MUDKIP,
+    .species = SPECIES_PIPLUP,
     }
 };
 

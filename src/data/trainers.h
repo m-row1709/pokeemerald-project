@@ -6250,7 +6250,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_WallyVR1),
     },
 
-    [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
+    [TRAINER_BRENDAN_ROUTE_103_PIPLUP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6258,8 +6258,10 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("BRENDAN"),
         .items = {},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_GREEN,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_BrendanRoute103Mudkip),
+        .party = TRAINER_PARTY(sParty_BrendanRoute103Piplup),
     },
 
     [TRAINER_BRENDAN_ROUTE_110_MUDKIP] =
@@ -6286,7 +6288,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_BrendanRoute119Mudkip),
     },
 
-    [TRAINER_BRENDAN_ROUTE_103_TREECKO] =
+    [TRAINER_BRENDAN_ROUTE_103_TURTWIG] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6294,8 +6296,10 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("BRENDAN"),
         .items = {},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_GREEN,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SETUP_FIRST_TURN,
-        .party = TRAINER_PARTY(sParty_BrendanRoute103Treecko),
+        .party = TRAINER_PARTY(sParty_BrendanRoute103Turtwig),
     },
 
     [TRAINER_BRENDAN_ROUTE_110_TREECKO] =
@@ -6322,7 +6326,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_BrendanRoute119Treecko),
     },
 
-    [TRAINER_BRENDAN_ROUTE_103_TORCHIC] =
+    [TRAINER_BRENDAN_ROUTE_103_CHIMCHAR] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
@@ -6330,8 +6334,10 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("BRENDAN"),
         .items = {},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_GREEN,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_BrendanRoute103Torchic),
+        .party = TRAINER_PARTY(sParty_BrendanRoute103Chimchar),
     },
 
     [TRAINER_BRENDAN_ROUTE_110_TORCHIC] =
@@ -6358,7 +6364,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_BrendanRoute119Torchic),
     },
 
-    [TRAINER_MAY_ROUTE_103_MUDKIP] =
+    [TRAINER_MAY_ROUTE_103_PIPLUP] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6366,8 +6372,10 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("MAY"),
         .items = {},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_PINK,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_MayRoute103Mudkip),
+        .party = TRAINER_PARTY(sParty_MayRoute103Piplup),
     },
 
     [TRAINER_MAY_ROUTE_110_MUDKIP] =
@@ -6394,7 +6402,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MayRoute119Mudkip),
     },
 
-    [TRAINER_MAY_ROUTE_103_TREECKO] =
+    [TRAINER_MAY_ROUTE_103_TURTWIG] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6402,8 +6410,10 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("MAY"),
         .items = {},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_PINK,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_MayRoute103Treecko),
+        .party = TRAINER_PARTY(sParty_MayRoute103Turtwig),
     },
 
     [TRAINER_MAY_ROUTE_110_TREECKO] =
@@ -6430,7 +6440,7 @@ const struct Trainer gTrainers[] = {
         .party = TRAINER_PARTY(sParty_MayRoute119Treecko),
     },
 
-    [TRAINER_MAY_ROUTE_103_TORCHIC] =
+    [TRAINER_MAY_ROUTE_103_CHIMCHAR] =
     {
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
@@ -6438,8 +6448,10 @@ const struct Trainer gTrainers[] = {
         .trainerName = _("MAY"),
         .items = {},
         .doubleBattle = FALSE,
+        .mugshotEnabled = TRUE,
+        .mugshotColor = MUGSHOT_COLOR_PINK,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = TRAINER_PARTY(sParty_MayRoute103Torchic),
+        .party = TRAINER_PARTY(sParty_MayRoute103Chimchar),
     },
 
     [TRAINER_MAY_ROUTE_110_TORCHIC] =
