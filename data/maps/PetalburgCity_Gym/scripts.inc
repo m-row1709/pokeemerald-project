@@ -91,6 +91,11 @@ PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	delay 30
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp
 	waitmovement 0
+  msgbox PetalburgCity_Gym_Text_DadGiveAcroBike, MSGBOX_DEFAULT
+  giveitem ITEM_ACRO_BIKE
+  msgbox PetalburgCity_Gym_Text_DadExplainAcroBike, MSGBOX_DEFAULT
+  closemessage
+  delay 30
 	msgbox PetalburgCity_Gym_Text_DadGoCollectBadges, MSGBOX_DEFAULT
 	setvar VAR_PETALBURG_GYM_STATE, 2
 	releaseall
@@ -1214,15 +1219,26 @@ PetalburgCity_Gym_Text_WallyThankYouBye:
 	.string "so I have to go!\p"
 	.string "Bye, {PLAYER}!$"
 
+PetalburgCity_Gym_Text_DadGiveAcroBike:
+  .string "DAD: Thank you for helping me there.\p"
+  .string "In fact, take this Acro Bike as a\n"
+  .string "little reward for your work!$"
+
+PetalburgCity_Gym_Text_DadExplainAcroBike:
+  .string "You can use that Acro Bike to hop\n"
+  .string "across water like on Route 103.\p"
+  .string "You can even register it to your Key\n"
+  .string "Item wheel for easier access!$"
+
 PetalburgCity_Gym_Text_DadGoCollectBadges:
-	.string "DAD: Now…\p"
+	.string "Now…\p"
 	.string "{PLAYER}, if you want to become a\n"
 	.string "strong TRAINER, here's my advice.\p"
-	.string "Head for RUSTBORO CITY beyond this\n"
-	.string "town.\p"
-	.string "There, you should challenge\n"
-	.string "the GYM LEADER, ROXANNE.\p"
-	.string "After her, go on to other POKéMON\n"
+	.string "Head for MAUVILLE CITY beyond Routes\n"
+	.string "103 and 110.\p"
+	.string "There, you should challenge the\n"
+	.string "GYM LEADER, KOGA.\p"
+	.string "After him, go on to other POKéMON\n"
 	.string "GYMS and defeat their LEADERS.\p"
 	.string "Collect BADGES from them,\n"
 	.string "understood?\p"
@@ -1233,7 +1249,7 @@ PetalburgCity_Gym_Text_DadGoCollectBadges:
 
 PetalburgCity_Gym_Text_NormanGoToRustboro:
 	.string "DAD: Hm? Aren't you going to the\n"
-	.string "POKéMON GYM in RUSTBORO CITY?\p"
+	.string "POKéMON GYM in MAUVILLE CITY?\p"
 	.string "There's no challenge for me to\n"
 	.string "battle a greenhorn TRAINER.\p"
 	.string "{PLAYER}, I want you to challenge me\n"
@@ -1243,11 +1259,11 @@ PetalburgCity_Gym_Text_NormanGoToRustboro:
 
 PetalburgCity_Gym_Text_NormanGoToDewford:
 	.string "DAD: I see… So, you've beaten\n"
-	.string "the GYM LEADER in RUSTBORO CITY.\p"
+	.string "the GYM LEADER in MAUVILLE CITY.\p"
 	.string "But there are many more TRAINERS\n"
 	.string "who are stronger than you, {PLAYER}.\p"
-	.string "Across the sea in DEWFORD TOWN is a\n"
-	.string "GYM LEADER named BRAWLY.\p"
+	.string "West of MAUVILLE CITY is RUSTBORO\n"
+	.string "CITY and their GYM LEADER BROCK.\p"
 	.string "You should go challenge him.$"
 
 PetalburgCity_Gym_Text_YouHaveGottenStronger:
