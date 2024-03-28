@@ -4286,28 +4286,28 @@ static const struct TrainerMon sParty_Allen[] = {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 7,
     .species = SPECIES_TYROGUE,
-    .heldItem = ITEM_MUSCLE_BAND,
-    .ability = ABILITY_SWARM,
+    .heldItem = ITEM_CHOICE_BAND,
+    .ability = ABILITY_GUTS,
     .nature = NATURE_JOLLY,
-    .moves = {MOVE_SWIFT, MOVE_MACH_PUNCH, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_TACKLE, MOVE_NONE, MOVE_NONE, MOVE_NONE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 6,
     .species = SPECIES_ROGGENROLA,
-    .heldItem = ITEM_MUSCLE_BAND,
-    .ability = ABILITY_SWARM,
-    .nature = NATURE_JOLLY,
-    .moves = {MOVE_SWIFT, MOVE_MACH_PUNCH, MOVE_NONE, MOVE_NONE}
+    .heldItem = ITEM_NONE,
+    .ability = ABILITY_ROCK_HEAD,
+    .nature = NATURE_IMPISH,
+    .moves = {MOVE_ROLLOUT, MOVE_DEFENSE_CURL, MOVE_NONE, MOVE_NONE}
     },
     {
     .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 6,
     .species = SPECIES_ZIGZAGOON,
-    .heldItem = ITEM_MUSCLE_BAND,
-    .ability = ABILITY_SWARM,
+    .heldItem = ITEM_BERRY_JUICE,
+    .ability = ABILITY_GUTS,
     .nature = NATURE_JOLLY,
-    .moves = {MOVE_SWIFT, MOVE_MACH_PUNCH, MOVE_NONE, MOVE_NONE}
+    .moves = {MOVE_HEADBUTT, MOVE_MUD_SHOT, MOVE_NONE, MOVE_NONE}
     }
 };
 
