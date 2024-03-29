@@ -85,7 +85,7 @@ Route110_EventScript_OldMan::
 	end
 
 Route110_EventScript_OldWoman::
-	msgbox Route110_Text_WalkOnTheLowRoad, MSGBOX_NPC
+	msgbox Route110_Text_TrickHouseClosed, MSGBOX_NPC
 	end
 
 Route110_EventScript_CyclingGuy2::
@@ -389,8 +389,8 @@ Route110_EventScript_RivalScene::
 	call_if_eq VAR_0x8008, 2, Route110_EventScript_RivalApproachPlayer2
 	call_if_eq VAR_0x8008, 3, Route110_EventScript_RivalApproachPlayer3
 	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, Route110_EventScript_MayBattle
-	goto_if_eq VAR_RESULT, FEMALE, Route110_EventScript_BrendanBattle
+	goto_if_eq VAR_RESULT, MALE, Route110_EventScript_MaySpeak
+	goto_if_eq VAR_RESULT, FEMALE, Route110_EventScript_BrendanSpeak
 	releaseall
 	end
 
@@ -402,60 +402,14 @@ Route110_EventScript_PlayBrendanMusic::
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 	return
 
-Route110_EventScript_MayBattle::
-	msgbox Route110_Text_MayLetsBattle, MSGBOX_DEFAULT
-	switch VAR_STARTER_MON
-	case 0, Route110_EventScript_MayBattleTreecko
-	case 1, Route110_EventScript_MayBattleTorchic
-	case 2, Route110_EventScript_MayBattleMudkip
-	end
-
-Route110_EventScript_MayBattleTreecko::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TREECKO, Route110_Text_MayDefeated
-	goto Route110_EventScript_MayDefeated
-	end
-
-Route110_EventScript_MayBattleTorchic::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_TORCHIC, Route110_Text_MayDefeated
-	goto Route110_EventScript_MayDefeated
-	end
-
-Route110_EventScript_MayBattleMudkip::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_MUDKIP, Route110_Text_MayDefeated
-	goto Route110_EventScript_MayDefeated
-	end
-
-Route110_EventScript_MayDefeated::
+Route110_EventScript_MaySpeak::
 	msgbox Route110_Text_MayTakeThis, MSGBOX_DEFAULT
 	call Route110_EventScript_GiveItemfinder
 	msgbox Route110_Text_MayExplainItemfinder, MSGBOX_DEFAULT
 	goto Route110_EventScript_RivalExit
 	end
 
-Route110_EventScript_BrendanBattle::
-	msgbox Route110_Text_BrendanLetsBattle, MSGBOX_DEFAULT
-	switch VAR_STARTER_MON
-	case 0, Route110_EventScript_BrendanBattleTreecko
-	case 1, Route110_EventScript_BrendanBattleTorchic
-	case 2, Route110_EventScript_BrendanBattleMudkip
-	end
-
-Route110_EventScript_BrendanBattleTreecko::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_TREECKO, Route110_Text_BrendanDefeated
-	goto Route110_EventScript_BrendanDefeated
-	end
-
-Route110_EventScript_BrendanBattleTorchic::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_TORCHIC, Route110_Text_BrendanDefeated
-	goto Route110_EventScript_BrendanDefeated
-	end
-
-Route110_EventScript_BrendanBattleMudkip::
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_110_MUDKIP, Route110_Text_BrendanDefeated
-	goto Route110_EventScript_BrendanDefeated
-	end
-
-Route110_EventScript_BrendanDefeated::
+Route110_EventScript_BrendanSpeak::
 	msgbox Route110_Text_BrendanTakeThis, MSGBOX_DEFAULT
 	call Route110_EventScript_GiveItemfinder
 	msgbox Route110_Text_BrendanExplainItemfinder, MSGBOX_DEFAULT
@@ -771,19 +725,21 @@ Route110_Text_MayDefeated:
 	.string "You're better than I expected!$"
 
 Route110_Text_MayTakeThis:
-	.string "MAY: {PLAYER}{KUN}, you've been busy\n"
-	.string "training, too, haven't you?\p"
-	.string "I think you deserve a reward!\n"
-	.string "This is from me!$"
+	.string "MAY: {PLAYER}, I hope you've\n"
+	.string "been busy training your POKéMON!\p"
+  .string "I sure have, and my team's getting\n"
+  .string "stronger by the minute!\p"
+	.string "By the way, I accidentally bought two\n"
+	.string "of these. Why don't you take one?$"
 
 Route110_Text_MayExplainItemfinder:
 	.string "MAY: That's an ITEMFINDER.\p"
 	.string "Try it out. If there is an item that's\n"
 	.string "not visible, it emits a sound.\p"
 	.string "Okay, {PLAYER}{KUN}, let's meet again!\p"
-	.string "I know it's a little silly coming from\n"
-	.string "me, but I think you should train a lot\l"
-	.string "harder for the next time.$"
+	.string "I fancy having a battle next time we\n"
+	.string "meet. You should keep training hard\l"
+	.string "because I won't go easy on you!$"
 
 Route110_Text_BrendanLetsBattle:
 	.string "BRENDAN: Hey, {PLAYER}.\n"
@@ -797,19 +753,21 @@ Route110_Text_BrendanDefeated:
 	.string "You're pretty good.$"
 
 Route110_Text_BrendanTakeThis:
-	.string "BRENDAN: {PLAYER}, you've trained\n"
-	.string "without me noticing…\p"
-	.string "Good enough!\n"
-	.string "Here, take this.$"
+	.string "BRENDAN: {PLAYER}, I hope you've\n"
+	.string "been busy training your POKéMON!\p"
+	.string "I sure have, and my team's getting\n"
+  .string "stronger by the minute!\p"
+	.string "By the way, I accidentally bought two\n"
+	.string "of these. Why don't you take one?$"
 
 Route110_Text_BrendanExplainItemfinder:
 	.string "BRENDAN: That's an ITEMFINDER.\p"
-	.string "Use it to root around for items that\n"
-	.string "aren't visible.\p"
-	.string "If it senses something, it emits\n"
-	.string "a sound.\p"
-	.string "Anyway, I'm off to look for new\n"
-	.string "POKéMON.$"
+	.string "Try it out. If there is an item that's\n"
+	.string "not visible, it emits a sound.\p"
+	.string "Okay, {PLAYER}, let's meet again!\p"
+	.string "I fancy having a battle next time we\n"
+	.string "meet. You should keep training hard\l"
+	.string "because I won't go easy on you!$"
 
 Route110_Text_RideBikeAtFullSpeed:
 	.string "Wouldn't it be great to ride a BIKE\n"
@@ -842,9 +800,11 @@ Route110_Text_TwoRoads:
 	.string "A road each for people and POKéMON.\n"
 	.string "Perhaps that is right and fair.$"
 
-Route110_Text_WalkOnTheLowRoad:
-	.string "I don't have a BIKE, so I'll take\n"
-	.string "a leisurely walk on the low road.$"
+Route110_Text_TrickHouseClosed:
+	.string "Sorry Kiddo, the Trick House is\n"
+	.string "closed for a while.\p"
+  .string "Perhaps come back later and we might\n"
+  .string "be open for business then!$"
 
 Route110_Text_BikeTechniques:
 	.string "Learning techniques will make BIKE\n"
