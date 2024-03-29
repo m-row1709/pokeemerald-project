@@ -2682,11 +2682,11 @@ Route118_Text_DaltonPostRematch:
 
 Route118_Text_DeandreIntro:
 	.string "Go, go, go!\n"
-	.string "POKéMON 1, 2, and 3!$"
+	.string "POKéMON 1, 2, 3, and 4!$"
 
 Route118_Text_DeandreDefeat:
 	.string "Come in, POKéMON! Are you okay?\n"
-	.string "POKéMON 1, 2, and 3?!$"
+	.string "POKéMON 1, 2, 3, and 4?!$"
 
 Route118_Text_DeandrePostBattle:
 	.string "Isn't it cool that I have a POKéMON\n"
