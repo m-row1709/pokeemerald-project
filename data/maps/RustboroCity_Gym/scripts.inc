@@ -103,6 +103,16 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 	releaseall
 	end
 
+RustboroCity_Gym_EventScript_Kirk::
+	trainerbattle_single TRAINER_KIRK, RustboroCity_Gym_Text_KirkIntro, RustboroCity_Gym_Text_KirkDefeat
+	msgbox RustboroCity_Gym_Text_KirkPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+RustboroCity_Gym_EventScript_Angelo::
+	trainerbattle_single TRAINER_ANGELO, RustboroCity_Gym_Text_AngeloIntro, RustboroCity_Gym_Text_AngeloDefeat
+	msgbox RustboroCity_Gym_Text_AngeloPostBattle, MSGBOX_AUTOCLOSE
+	end
+
 RustboroCity_Gym_Text_GymGuideAdvice:
 	.string "Yo, how's it going?\p"
 	.string "Listen, my friend!\n"
@@ -281,3 +291,26 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 	.string "You only have one POKéMON with you?\p"
 	.string "Please return with at least one more\n"
 	.string "POKéMON.$"
+
+RustboroCity_Gym_Text_KirkIntro:
+	.string "My electric soul, it'll shatter your\n"
+	.string "dreams whole, whoa-yeahah!$"
+
+RustboroCity_Gym_Text_KirkDefeat:
+	.string "That was plugged in, amped up,\n"
+	.string "over-driven electric, man!$"
+
+RustboroCity_Gym_Text_KirkPostBattle:
+	.string "POKéMON and rock, it's all about heart,\n"
+	.string "whoa-yeah!$"
+
+RustboroCity_Gym_Text_AngeloIntro:
+	.string "I love shiny things!$"
+
+RustboroCity_Gym_Text_AngeloDefeat:
+	.string "Oh…\n"
+	.string "My eyes are frazzled…$"
+
+RustboroCity_Gym_Text_AngeloPostBattle:
+	.string "RUSTBORO GYM's BROCK has a big\n"
+	.string "forehead. It makes me happy!$"
